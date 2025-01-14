@@ -26,7 +26,7 @@ for i in range(nr+1):
     t.lt(180)
     t.fd(5)
     t.lt(90)
-    t.fd(9*4)
+    t.fd(10*4)
 
 
 turtle.done()

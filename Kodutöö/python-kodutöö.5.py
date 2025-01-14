@@ -5,4 +5,4 @@ while loop == 1:
     List.append(Shop)
     if Shop == "":   
         break
-print(f"Teie list:\n{List}\n")
+print(f"Teie list:\n{List}")

@@ -1,4 +1,4 @@
-"""
+
 def temperatuur(temp,yhik):
     """
     See on maailma parim manual 
@@ -15,4 +15,4 @@ def temperatuur(temp,yhik):
 
 print(temperatuur(3,"c"))
 print(temperatuur(3,"f"))
-print(temperatuur.__doc__)"""
+print(temperatuur.__doc__)

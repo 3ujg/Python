@@ -5,6 +5,7 @@ def pikim_sona(*sonad):
             pikim=len(i)
         print(f"Pikim sõna on {pikim} märki")
     
-    
 
-pikim_sona("üks", "kaks", "kolmekümend")
+pikim_sona("üks", "kaks", "viis", "kolmsada", "mustmiljon")
+
+
