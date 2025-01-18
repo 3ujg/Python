@@ -1,4 +1,20 @@
 import codecs
-x = 'some string'
-y = codecs.encode(x, 'rot13')
-codecs.decode(y, 'rot13')
+x = input("1. Uus sõna.\n2. Teisenda tagasi\n:")
+false = "True"
+while false == "True":
+    if x == "1":
+        v = input("Kirjuta: ")
+        y = codecs.encode(v, 'rot13') #Muudab söna rot13 peale
+        print(y)
+        continue
+    elif x == "2":
+        y = input("Transleeri: ")   
+        codecs.decode(y, 'rot13')
+
+    else:
+        print("Midagi läks valesti proovi uuesti.")
+
+    print(y)
+    smth = input("1. Originaalne sõna.\n2. Uus sõna/vale")
+    if smth == "1":
+        print(v)
