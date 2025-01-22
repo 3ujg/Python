@@ -7,6 +7,7 @@ with open(faili_nimi, mode='r', encoding='utf-8') as fail:
     print(dict_reader)
     for rida in dict_reader:
         print(rida)
-fass = open("est.csv")
-tiimide_arv = fass.readlines()
+fass = open(faili_nimi)
+tiimide_arv = fass.readlines(1)
 fass.close()
+print(tiimide_arv)
