@@ -1,16 +1,18 @@
 import requests
 
-
-url = "https://dummyjson.com/users"
+url = "https://dummy-json.mock.beeceptor.com/comments"
 
 response = requests.get(url)
 
 if response.status_code == 200:
     data = response.json()
-    users = data("users")
+    comments = data("comments")
 
-user_id = int(input("Sisesta inimese id: "))
+comment_id = int(input("Sisesta inimese id: "))
 
-for user in users:
-    if user('id') == user_id:
-        print(f"User id: {user_id}")
+for comment in comments:
+    if comment('id') == comment_id:
+        print(f"User id: {comment_id}")
+        break
+    else:
+        print("Something went wrong.")
