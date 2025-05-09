@@ -17,4 +17,4 @@ for _ in range(10):
     else:
         print("vale!")
         valed+=1
-print(f"{oiged} õiget vastust {valed} valet vastust")
+print(f"{oiged} õiget vastust ja {valed} valet vastust")
