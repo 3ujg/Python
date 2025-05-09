@@ -6,3 +6,5 @@ while loop == 1:
     if Shop == "":   
         break
 print(f"Teie list:\n{List}")
+for item in List:
+    print(item)
