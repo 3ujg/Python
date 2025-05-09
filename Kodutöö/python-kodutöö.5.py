@@ -5,6 +5,5 @@ while loop == 1:
     List.append(Shop)
     if Shop == "":   
         break
-print(f"Teie list:\n{List}")
 for item in List:
     print(item)

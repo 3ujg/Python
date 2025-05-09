@@ -1,3 +1,4 @@
+# Alar Tammes 09.05.2025
 import codecs
 
 false = "True"
