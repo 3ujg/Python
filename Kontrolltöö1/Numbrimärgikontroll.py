@@ -7,7 +7,7 @@ if len(numbrimark) > 6 or len(numbrimark) < 6:
 if numbrimark[0] and numbrimark[1] and numbrimark[2] in tah:
         if numbrimark[3]and numbrimark[4]and numbrimark[5] in num:
             print("Sobib")
-        else:
-            print("ei Sobi")
+else:
+    print("ei Sobi")
 
     
