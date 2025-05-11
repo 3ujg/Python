@@ -10,7 +10,7 @@ while false == "True":
         print(f'Krüpteeritud sõna: {y}')
     elif x == "2":
         x = input("Transleeri: ")   
-        z = codecs.decode(x, 'rot13')
+        z = codecs.decode(x, 'rot13') #V6ttab s2na rot13 ja muudab tagasi
         print(f'Dekrüpteeritud sõna: {z}')
     elif x == "3":
         break
