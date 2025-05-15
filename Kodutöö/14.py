@@ -18,9 +18,9 @@ nkpalgad = sum(npalgad) / len(npalgad)
 print(f"Meeste keskmine palk{mkpalgad}")
 print(f"Naiste keskmine palk {nkpalgad}")
 if mkpalgad > nkpalgad:
-    print("Meeste keskmine palk on suurem.")
+    print("Mehed saavad rohkem palka.")
 elif mkpalgad < nkpalgad:
-    print("Naiste keskmine palk on suurem.")
+    print("Naised saavad rohkem palka.")
 else:
     print("Maailmas on rahu.")
 fail.close()
