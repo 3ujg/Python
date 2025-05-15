@@ -14,4 +14,4 @@ while True:
     elif valik==3:
         break
     else:
-        "Midagi läks valesti proovi uuesti"
+        print("Midagi läks valesti, proovi uuesti.")
