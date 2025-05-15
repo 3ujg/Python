@@ -10,7 +10,7 @@ for _ in range(10):
     print(f"{j} * {k} = ")
     vastus = int(input("Vastus: "))
     if vastus == j*k:
-        print ("ÕIGE!")
+        print("ÕIGE!")
         oiged+=1
     else:
         print("VALE!")
