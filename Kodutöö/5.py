@@ -1,3 +1,5 @@
+# Alar Tammes 15.05.2025
+# Ülesanne 5
 loop = 1
 List = []
 while loop == 1:

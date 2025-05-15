@@ -1,4 +1,5 @@
 # Alar Tammes 09.05.2025
+# Ülesanne 1
 
 import random
 

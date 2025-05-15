@@ -1,4 +1,6 @@
 # Alar Tammes 09.05.2025
+# Ülesanne 12
+
 EEK = float(15.64)
 EUR = 1
 while True:

@@ -1,4 +1,6 @@
 # Alar Tammes 09.05.2025
+# Ülesanne 14
+
 mpalgad = []
 npalgad = []
 
