@@ -23,7 +23,7 @@ def insert_data():
             entries["Žanr"].get(),
             entries["Kestus"].get(),
             entries["Reiting"].get(),
-            entries["Keel"].get(),
+            entries["Keel"c:\Users\atammes\Downloads\sqlite-tools-win-x64-3510200\ATammes.db].get(),
             entries["Riik"].get(),
             entries["Kirjeldus"].get()
         ))
@@ -49,7 +49,6 @@ def validate_data():
         tk.messagebox.showerror("Viga", "Reiting peab olema vahemikus 0 kuni 10!")
         return False
     return True
-    tk.messagebox.showinfo("Edu", "Andmed on kehtivad!")
 
 # Loo Tkinteri aken
 root = tk.Tk()
@@ -66,7 +65,7 @@ for i, label in enumerate(labels):
     entries[label] = entry
 
 # Loo nupp andmete sisestamiseks
-submit_button = tk.Button(root, text="Sisesta andmed")
+submit_button = tk.Button(root, text="Sisesta andmed", command=validate_data)
 submit_button.grid(row=len(labels), column=0, columnspan=2, pady=20)
 
 # Näita Tkinteri akent
