@@ -10,7 +10,7 @@ def clear_entries():
 # valideerib andmed ja lisab need andmebaasi
 def insert_data():
     if validate_data():
-        connection = sqlite3.connect("movies.db")
+        connection = sqlite3.connect("Atammes.db")
         cursor = connection.cursor()
 
         cursor.execute("""
@@ -23,7 +23,7 @@ def insert_data():
             entries["Žanr"].get(),
             entries["Kestus"].get(),
             entries["Reiting"].get(),
-            entries["Keel"c:\Users\atammes\Downloads\sqlite-tools-win-x64-3510200\ATammes.db].get(),
+            entries["Keel"].get(),
             entries["Riik"].get(),
             entries["Kirjeldus"].get()
         ))
