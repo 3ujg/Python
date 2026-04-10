@@ -18,11 +18,11 @@ TABLE_COLUMNS = {
 
 TABLES = list(TABLE_COLUMNS.keys())
 
-# 🔹 Open inserter
+#  Open inserter
 def add_data():
     subprocess.Popen([sys.executable, INSERTER_SCRIPT], cwd=os.getcwd())
 
-# 🔹 Load data
+#  Load data
 def load_data_from_db(tree, search_query=""):
     table = selected_table.get()
     columns = ("rowid",) + TABLE_COLUMNS[table]
@@ -61,11 +61,11 @@ def load_data_from_db(tree, search_query=""):
     for row in rows:
         tree.insert("", "end", values=row, iid=row[0])  # rowid as iid
 
-# 🔹 Search
+#  Search
 def on_search():
     load_data_from_db(tree, search_entry.get().strip())
 
-# 🔹 Open update window
+#  Open update window
 def open_update_window(record_id):
     table = selected_table.get()
     columns = ("rowid",) + TABLE_COLUMNS[table]
@@ -83,7 +83,7 @@ def open_update_window(record_id):
     record = cur.fetchone()
     conn.close()
 
-    # ✅ FIX: prevent crash
+    #  FIX: prevent crash
     if record is None:
         messagebox.showerror("Viga", "Kirjet ei leitud!")
         update_window.destroy()
@@ -125,7 +125,7 @@ def open_update_window(record_id):
         row=len(columns), column=0, columnspan=2, pady=10
     )
 
-# 🔹 Update button click
+#  Update button click
 def on_update():
     selected = tree.selection()
 
@@ -136,7 +136,7 @@ def on_update():
     record_id = selected[0]
     open_update_window(record_id)
 
-# 🔹 UI
+#  UI
 root = tk.Tk()
 root.title("Majutus")
 
