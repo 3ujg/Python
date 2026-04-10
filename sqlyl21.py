@@ -64,7 +64,7 @@ def open_update_window(record_id):
     save_button = tk.Button(update_window, text="Salvesta", command=lambda: update_record(record_id, entries, update_window))
     save_button.grid(row=len(labels), column=0, columnspan=2, pady=10)
 
-# Funktsioon, mis näitab valitud rea ID-d
+# Funktsioon, mis näitab valitud rea ID-d ja avab muutmise vormi
 def on_update():
     selected_item = tree.selection()  # Võta valitud rida
     if selected_item:
@@ -86,15 +86,15 @@ def load_data_from_db(tree, search_query=""):
     conn = sqlite3.connect('movies.db')
     cursor = conn.cursor()
 
-    # Tee päring andmebaasist andmete toomiseks
+    # Tee päring andmebaasist andmete toomiseks, koos ID-ga, kuid ID ei kuvata
     if search_query:
-        cursor.execute("SELECT title, director, release_year, genre, duration, rating, language, country, description FROM movies WHERE title LIKE ?", ('%' + search_query + '%',))
+        cursor.execute("SELECT id, title, director, release_year, genre, duration, rating, language, country, description FROM movies WHERE title LIKE ?", ('%' + search_query + '%',))
     else:
-        cursor.execute("SELECT title, director, release_year, genre, duration, rating, language, country, description FROM movies")
+        cursor.execute("SELECT id, title, director, release_year, genre, duration, rating, language, country, description FROM movies")
 
     rows = cursor.fetchall()
 
-    # Lisa andmed tabelisse
+    # Lisa andmed tabelisse (Treeview), kuid ID-d ei kuvata
     for row in rows:
         tree.insert("", "end", values=row[1:], iid=row[0])  # iid määratakse ID-ks
 
