@@ -136,6 +136,36 @@ def on_update():
     record_id = selected[0]
     open_update_window(record_id)
 
+# Delete button click
+def on_delete():
+    selected = tree.selection()
+
+    if not selected:
+        messagebox.showwarning("Valik puudub", "Palun vali rida kustutamiseks!")
+        return
+
+    record_id = selected[0]
+    table = selected_table.get()
+
+    # Ask for confirmation before deleting
+    confirm = messagebox.askyesno("Kinnita", "Kas oled kindel, et soovid valitud rea kustutada?")
+    
+    if confirm:
+        try:
+            conn = sqlite3.connect(DB_NAME)
+            cur = conn.cursor()
+            
+            cur.execute(f"DELETE FROM {table} WHERE rowid=?", (record_id,))
+            conn.commit()
+            conn.close()
+
+            # Reload data to reflect changes
+            load_data_from_db(tree)
+            messagebox.showinfo("Edu", "Kirje edukalt kustutatud!")
+
+        except Exception as e:
+            messagebox.showerror("Viga", f"Viga kustutamisel: {e}")
+
 #  UI
 root = tk.Tk()
 root.title("Majutus")
@@ -176,6 +206,7 @@ button_frame.pack(pady=10)
 
 tk.Button(button_frame, text="Lisa andmeid", command=add_data).grid(row=0, column=0, padx=5)
 tk.Button(button_frame, text="Uuenda", command=on_update).grid(row=0, column=1, padx=5)
+tk.Button(button_frame, text="Kustuta", command=on_delete).grid(row=0, column=2, padx=5)
 
 # Initial load
 load_data_from_db(tree)
